@@ -165,16 +165,24 @@
         padding: 1rem 1rem;
         z-index:1;
         z-index: 1;
+        position:relative;
       }
       
       #menu .container{
-        position: relative;
         overflow: hidden;
       }
       
       #menu .container .card img{
         width:100%;
+        position: relative;
+        transform: scale(1) translateX(0);
+        transition: all 1s ease-in-out;
       }
+
+      #menu .container .card:hover img{
+        transform: scale(.6) translateX(-50%) ;
+      }
+
       
       
       #menu .container .card .text-content{
@@ -185,25 +193,48 @@
         right:0;
         bottom:0;
         font-size:1rem;
-        transform: translateY(-50%) translateX(0%);
+        transform: translateY(-110%) translateX(0%);
         line-height: 2;
         z-index: 1;
+        transition: all 1s ease-in-out;
+        width: 50%;
+      }
+
+      #menu .container .card .text-content h1{
+        font-size:.5rem;
+        
+      }
+
+      #menu .container .card .text-content p{
+        font-size: .75rem;
+        line-height: 1;
+        padding:0 2rem;
+      }
+
+      #menu .container .card:hover .text-content{
+        transform: translateY(15%) translateX(75%);
+
       }
       
-      #menu .container .card::before{
+      #menu .container .card:before{
         content:'';
-        background: red;
+        background: rgba(53, 8, 8, 0.4);
         position: absolute;
         top:0;
         left:0;
-        width:100%;
-        height: 100%;
-        transform: translateX(-110%);
+        right: 0;
+        bottom: 0;
+        width:50%;
+        height: 50%;
+        margin:auto;
+        transform: translateX(-220%);
+        border-radius:20px;
+        transition: all 1s ease-in-out;
       }
       
-      /* #menu .container .card:hover::before{
-        transform: translateX(0%);
-      } */
+      #menu .container .card:hover::before {
+        transform: translateX(20%) translateY(-20%);
+      }
       #menu .container .card .text-content h1{
         font-size: 1.3rem;
       
@@ -342,7 +373,7 @@
       <div class="card">
         <img src="https://az815214.vo.msecnd.net/web/items/10249/ccapp-10249-2x.png" alt="BoneRibeye">
         <div class="text-content">
-          <h1>Bone-In Natural Cut Ribeye</h1>
+          <h1>Bone-In Ribeye</h1>
           <p>Bone-in and extra marbled for maximum tenderness.</p>
           <p> Seasoned and wood-fire grilled over oak.</p>
         </div>
@@ -385,9 +416,9 @@
       <div class="card">
         <img src="https://az815214.vo.msecnd.net/web/categories/PrimeRib/ccapp-PrimeRib-2x.png" alt="PrimeRib">
         <div class="text-content">
-          <h1>Slow-Roasted Prime Rib</h1>
-          <p>Seasoned with an herb crust, served with au jus and hand-carved to order.</p>
-          <p> Choose either original roasted or wood-fire grilled.</p>
+          <h1>Prime Rib</h1>
+          <p>Seasoned with an herb crust, served with au jus and hand-carved to order.Choose either original roasted or wood-fire grilled.</p>
+          <p> </p>
         </div>
       </div>
     </div>
