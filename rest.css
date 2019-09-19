@@ -163,7 +163,7 @@ img{
   z-index: 1;
 }
 
-#menu .container::before{
+#menu .container .card::before{
   content:'';
   background: red;
   position: absolute;
@@ -174,14 +174,24 @@ img{
   transform: translateX(-110%);
 }
 
-#menu .container:hover::before{
+/* #menu .container .card:hover::before{
   transform: translateX(0%);
-}
+} */
 #menu .container .card .text-content h1{
   font-size: 1.3rem;
 
 }
 
+#contact{
+  height:100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
+#contact .contact-form{
+   width:1200px;
+}
 
 
