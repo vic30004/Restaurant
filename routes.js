@@ -6,18 +6,18 @@ var PORT = 3030;
 
 var tables = [{
   name: "Andrew Tocchi",
-  phone: "530.701.2179",
+  phone: "5307012179",
   email: "andrewtocchi@gmail.com"
 },
 {
   name: "Mike Brown",
-phone: "555.555.5555",
+phone: "5555555555",
 email: "mikebrown@gmail.com",
 }];
 
 var queue = [{
   name: "Mike Brown",
-  phone: "555.555.5555",
+  phone: "5555555555",
   email: "mikebrown@gmail.com",
 }];
 
@@ -29,8 +29,9 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "rest.html"));
 });
 
-app.get("/tables", function (req, res) {
+app.post("/tables", function (req, res) {
   // Welcome to our Restaurant!")
+    tables.push(req.body);
     return res.json(tables);
 
 });

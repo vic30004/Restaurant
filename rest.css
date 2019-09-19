@@ -166,7 +166,7 @@ img{
   right:0;
   bottom:0;
   font-size:1rem;
-  transform: translateY(30%) translateX(0%);
+  transform: translateY(-50%) translateX(0%);
   line-height: 2;
   z-index: 1;
 }
