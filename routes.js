@@ -1,25 +1,30 @@
-var express = require("express");
-var path = require("path");
+// var express = require("express");
+// var path = require("path");
 
-var app = express();
-var PORT = 3030;
+// var app = express();
+// var PORT = 3030;
 
-var tables = [{
+let tables = [{
   name: "Andrew Tocchi",
   phone: "5307012179",
   email: "andrewtocchi@gmail.com"
 },
 {
-  name: "Mike Brown",
+name: "Mike Brown",
 phone: "5555555555",
 email: "mikebrown@gmail.com",
-}];
+},
+{},
+{},
+{},
+];
 
 var queue = [{
   name: "Mike Brown",
   phone: "5555555555",
   email: "mikebrown@gmail.com",
 }];
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -31,7 +36,12 @@ app.get("/", function (req, res) {
 
 app.post("/tables", function (req, res) {
   // Welcome to our Restaurant!")
+  if(tables.length<8){
     tables.push(req.body);
+  }
+    else{
+      queue.push(req.body);
+    }
     return res.json(tables);
 
 });
@@ -42,7 +52,7 @@ app.get("/api/:table", function (req, res) {
 
   console.log(choice);
 
-  for (var i = 0; i < tables.length; i++) {
+  for (let i = 0; i < tables.length; i++) {
     if (choice === tables[i].phone) {
       return res.json(tables[i]);
     }
